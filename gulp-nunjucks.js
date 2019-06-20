@@ -41,7 +41,7 @@ module.exports = (opts) => {
   bundleTask.displayName = opts.name;
 
   const watchTask = () => {
-    watch(opts.src, { base: opts.src }, bundleTask);
+    watch(prefixGlobs(opts.glob, opts.src), bundleTask);
   };
   watchTask.displayName = opts.name + '_watch';
 
